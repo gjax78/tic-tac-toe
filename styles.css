@@ -15,12 +15,12 @@ body {
 
 /* ########## LEFT SECTION ########## */
 .left-section {
-  width: 33.33%;
+  width: 33.33vw;
 }
 
 /* ########## MAIN SECTION ########## */
 .main-section {
-  width: 33.33%;
+  width: 33.33vw;
 }
 
 .main-section-title {
@@ -33,10 +33,8 @@ body {
 
 .game-container {
   display: grid;
-  /* how do I get the position of the grid fixed within the 33% of each flexbox section?? */
-  /* position: fixed; */
-  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-  place-items: center;
+  grid-template: repeat(3, 0fr) / repeat(3, 0fr);
+  justify-content: center;
 }
 
 .box {
@@ -47,5 +45,5 @@ body {
 
 /* ########## RIGHT SECTION ########## */
 .right-section {
-  width: 33.33%;
+  width: 33.33vw;
 }
