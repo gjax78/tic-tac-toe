@@ -2,15 +2,15 @@
 html,
 body {
   font-family: 'Open Sans', sans-serif;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
 }
 
 .wrapper {
   display: flex;
   text-align: center;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
 }
 
 /* ########## LEFT SECTION ########## */
@@ -38,8 +38,8 @@ body {
 }
 
 .box {
-  width: 120px;
   height: 120px;
+  width: 120px;
   border: 1px solid #000000;
 }
 
