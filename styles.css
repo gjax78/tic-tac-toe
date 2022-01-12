@@ -1,0 +1,51 @@
+/* ########## GLOBAL ########## */
+html,
+body {
+  font-family: 'Open Sans', sans-serif;
+  height: 100%;
+  width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+
+/* ########## LEFT SECTION ########## */
+.left-section {
+  width: 33.33%;
+}
+
+/* ########## MAIN SECTION ########## */
+.main-section {
+  width: 33.33%;
+}
+
+.main-section-title {
+  padding-bottom: 10%;
+}
+
+.main-section-whose-turn {
+  padding-bottom: 10%;
+}
+
+.game-container {
+  display: grid;
+  /* how do I get the position of the grid fixed within the 33% of each flexbox section?? */
+  /* position: fixed; */
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  place-items: center;
+}
+
+.box {
+  width: 120px;
+  height: 120px;
+  border: 1px solid #000000;
+}
+
+/* ########## RIGHT SECTION ########## */
+.right-section {
+  width: 33.33%;
+}
