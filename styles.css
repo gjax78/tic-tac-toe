@@ -31,7 +31,7 @@ body {
   padding-bottom: 10%;
 }
 
-.game-container {
+.game-board {
   display: grid;
   grid-template: repeat(3, 0fr) / repeat(3, 0fr);
   justify-content: center;
