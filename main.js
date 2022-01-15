@@ -6,6 +6,7 @@ var game = new Game('one', '✕', 'two', '✻')
 /* ########## QUERYSELECTORS ########## */
 var gameBoard = document.querySelector('.game-board')
 var box = document.querySelector('.box')
+var winner = document.querySelector('.main-section-who-wins')
 
 /* ########## EVENT LISTENERS ########## */
 gameBoard.addEventListener('click', whichSquare)
@@ -13,24 +14,33 @@ gameBoard.addEventListener('click', whichSquare)
 /* ########## FUNCTIONS ########## */
 function whichSquare(e) {
   if (e.target.classList.contains('box')) {
-    clickBox1(event.target)
+    clickBox(event.target, event.target.id)
   }
 }
 
-function clickBox1(box) {
+function clickBox(boxes, box) {
   if (game.whoseTurn === 1) {
-    player1Turn(box)
+    player1Turn(boxes, box)
     game.changeTurns()
   } else if (game.whoseTurn === 2) {
-    player2Turn(box)
+    player2Turn(boxes, box)
     game.changeTurns()
   }
+  displayWinner()
 }
 
-function player1Turn(box) {
-    box.innerHTML = `${game.player1.token}`;
+function player1Turn(boxes, box) {
+  boxes.innerHTML = `${game.player1.token}`;
+  game.playerBoxesClicked(game.player1, box)
 }
 
-function player2Turn(box) {
-    box.innerHTML = `${game.player2.token}`;
+function player2Turn(boxes, box) {
+  boxes.innerHTML = `${game.player2.token}`;
+  game.playerBoxesClicked(game.player2, box)
+}
+
+function displayWinner() {
+  if (game.win === true) {
+    winner.innerHTML = `PLAYER ${game.whoWon[0].token} WINS!`
+  }
 }
