@@ -20,6 +20,9 @@ class Game {
   playerBoxesClicked(player, boxClicked) {
     player.boxesClicked.push(boxClicked)
     this.gameBoardData.push(boxClicked)
+    this.checkRows(player)
+    this.checkColumns(player)
+    this.checkDiagonals(player)
   }
 
 checkRows(player) {
@@ -57,3 +60,4 @@ checkRows(player) {
       this.whoWon.push(player)
     }
   }
+}

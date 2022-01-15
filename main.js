@@ -6,6 +6,7 @@ var game = new Game('one', '✕', 'two', '✻')
 /* ########## QUERYSELECTORS ########## */
 var gameBoard = document.querySelector('.game-board')
 var box = document.querySelector('.box')
+var winner = document.querySelector('.main-section-who-wins')
 
 /* ########## EVENT LISTENERS ########## */
 gameBoard.addEventListener('click', whichSquare)
@@ -25,6 +26,7 @@ function clickBox(boxes, box) {
     player2Turn(boxes, box)
     game.changeTurns()
   }
+  displayWinner()
 }
 
 function player1Turn(boxes, box) {
@@ -35,4 +37,10 @@ function player1Turn(boxes, box) {
 function player2Turn(boxes, box) {
   boxes.innerHTML = `${game.player2.token}`;
   game.playerBoxesClicked(game.player2, box)
+}
+
+function displayWinner() {
+  if (game.win === true) {
+    winner.innerHTML = `PLAYER ${game.whoWon[0].token} WINS!`
+  }
 }
