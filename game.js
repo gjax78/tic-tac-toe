@@ -35,3 +35,9 @@ checkRows(player) {
     } else if (player.boxesClicked.includes('box-3') && player.boxesClicked.includes('box-6') && player.boxesClicked.includes('box-9')) {
     }
   }
+
+  checkDiagonals(player) {
+    if (player.boxesClicked.includes('box-1') && player.boxesClicked.includes('box-5') && player.boxesClicked.includes('box-9')) {
+    } else if (player.boxesClicked.includes('box-3') && player.boxesClicked.includes('box-5') && player.boxesClicked.includes('box-7')) {
+    }
+  }
