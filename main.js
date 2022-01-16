@@ -28,18 +28,20 @@ function clickBox(boxes, box) {
     player2Turn(boxes, box)
     game.changeTurns()
   }
+  displayWinner()
+  setTimeout('endGame()', 5000)
 }
 
 function player1Turn(boxes, box) {
-    boxes.innerHTML = `${game.player1.token}`;
-    whoseTurn.innerHTML = `PLAYER ${game.player2.token}'S TURN`
-    game.playerBoxesClicked(game.player1, box)
+  boxes.innerHTML = `${game.player1.token}`;
+  whoseTurn.innerHTML = `PLAYER ${game.player2.token}'S TURN`
+  game.playerBoxesClicked(game.player1, box)
 }
 
 function player2Turn(boxes, box) {
-    boxes.innerHTML = `${game.player2.token}`;
-    whoseTurn.innerHTML = `PLAYER ${game.player1.token}'S TURN`
-    game.playerBoxesClicked(game.player2, box)
+  boxes.innerHTML = `${game.player2.token}`;
+  whoseTurn.innerHTML = `PLAYER ${game.player1.token}'S TURN`
+  game.playerBoxesClicked(game.player2, box)
 }
 
 function displayWinner(player) {
@@ -47,5 +49,16 @@ function displayWinner(player) {
     winner.innerHTML = `PLAYER ${game.whoWon[0].token} WINS!`
   } else if (game.tie) {
     winner.innerHTML = 'GAME IS A TIE!'
+  }
+}
+
+function endGame() {
+  if (game.gameBoardData.length === 9 || game.win) {
+    winner.innerHTML = ''
+    whoseTurn.innerHTML = ''
+    for (var i = 0; i < allBoxes.length; i++) {
+      allBoxes[i].innerHTML = ''
+    }
+    game.clearArrays()
   }
 }
