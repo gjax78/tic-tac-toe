@@ -1,7 +1,7 @@
 //have a few global variables that will be updated
 //global var game = new instance of Game class
 //global game that you can continually update
-var game = new Game('one', '✕', 'two', '✻')
+var game = new Game('one', '✕', 'two', '❍')
 
 /* ########## QUERYSELECTORS ########## */
 var gameBoard = document.querySelector('.game-board')
