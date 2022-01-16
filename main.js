@@ -8,6 +8,8 @@ var gameBoard = document.querySelector('.game-board')
 // var box = document.querySelector('.box')
 var allBoxes = document.querySelectorAll('.box')
 var gameStatus = document.querySelector('.main-section-game-status')
+var tallyPlayerOne = document.querySelector('.tally-player-one')
+var tallyPlayerTwo = document.querySelector('.tally-player-two')
 
 /* ########## EVENT LISTENERS ########## */
 gameBoard.addEventListener('click', whichSquare)
@@ -46,18 +48,26 @@ function player2Turn(boxes, box) {
 function displayWinner(player) {
   if (game.win) {
     gameStatus.innerHTML = `PLAYER ${game.whoWon[0].token} WINS!`
+    gameBoard.removeEventListener('click', whichSquare)
   } else if (game.tie) {
     gameStatus.innerHTML = 'GAME IS A TIE!'
   }
 }
 
+function updatePlayer1Wins(player) {
+    tallyPlayerOne.innerText = `${game.player1.wins}`
+    tallyPlayerTwo.innerText = `${game.player2.wins}`
+}
+
 function endGame() {
   if (game.gameBoardData.length === 9 || game.win) {
-    // winner.innerHTML = ''
     gameStatus.innerHTML = ''
     for (var i = 0; i < allBoxes.length; i++) {
       allBoxes[i].innerHTML = ''
     }
+    updatePlayer1Wins('player1')
+    updatePlayer1Wins('player2')
     game.clearArrays()
+    gameBoard.addEventListener('click', whichSquare)
   }
 }
