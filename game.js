@@ -20,11 +20,11 @@ class Game {
   playerBoxesClicked(player, boxClicked) {
     player.boxesClicked.push(boxClicked)
     this.gameBoardData.push(boxClicked)
-    this.checkTotal(player)
+    this.checkPlayerData(player)
     this.changeTurns()
   }
 
-  checkTotal(player) {
+  checkPlayerData(player) {
     if (this.gameBoardData.length >= 5) {
      this.checkGameWinner(player);
    } else {
@@ -62,7 +62,7 @@ checkRows(player) {
 
   checkGameWinner(player) {
     if (this.checkRows(player) || this.checkColumns(player) || this.checkDiagonals(player)) {
-      this.executeWin(player);
+      this.updateWin(player);
     } else if ((this.gameBoardData.length === 9) && (this.win === false)) {
       this.tie = true;
     } else {
@@ -70,11 +70,19 @@ checkRows(player) {
     }
   }
 
-  executeWin(player) {
+  updateWin(player) {
     this.win = true;
     this.whoWon.push(player)
     player.isWinner = true;
     player.wins++;
     this.changeTurns();
   }
+
+  clearArrays() {
+   this.player2.boxesClicked = []
+   this.player1.boxesClicked = []
+   this.gameBoardData = []
+   this.whoWon = []
+   this.win = false
+ }
 }
