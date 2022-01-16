@@ -7,8 +7,7 @@ var game = new Game('one', '✕', 'two', '❍')
 var gameBoard = document.querySelector('.game-board')
 // var box = document.querySelector('.box')
 var allBoxes = document.querySelectorAll('.box')
-var winner = document.querySelector('.main-section-who-wins')
-var whoseTurn = document.querySelector('.main-section-whose-turn')
+var gameStatus = document.querySelector('.main-section-game-status')
 
 /* ########## EVENT LISTENERS ########## */
 gameBoard.addEventListener('click', whichSquare)
@@ -33,29 +32,29 @@ function clickBox(boxes, box) {
 }
 
 function player1Turn(boxes, box) {
-  boxes.innerHTML = `${game.player1.token}`;
-  whoseTurn.innerHTML = `PLAYER ${game.player2.token}'S TURN`
+  boxes.innerHTML = `${game.player1.token}`
+  gameStatus.innerHTML = `PLAYER ${game.player2.token}'S TURN`
   game.playerBoxesClicked(game.player1, box)
 }
 
 function player2Turn(boxes, box) {
-  boxes.innerHTML = `${game.player2.token}`;
-  whoseTurn.innerHTML = `PLAYER ${game.player1.token}'S TURN`
+  boxes.innerHTML = `${game.player2.token}`
+  gameStatus.innerHTML = `PLAYER ${game.player1.token}'S TURN`
   game.playerBoxesClicked(game.player2, box)
 }
 
 function displayWinner(player) {
   if (game.win) {
-    winner.innerHTML = `PLAYER ${game.whoWon[0].token} WINS!`
+    gameStatus.innerHTML = `PLAYER ${game.whoWon[0].token} WINS!`
   } else if (game.tie) {
-    winner.innerHTML = 'GAME IS A TIE!'
+    gameStatus.innerHTML = 'GAME IS A TIE!'
   }
 }
 
 function endGame() {
   if (game.gameBoardData.length === 9 || game.win) {
-    winner.innerHTML = ''
-    whoseTurn.innerHTML = ''
+    // winner.innerHTML = ''
+    gameStatus.innerHTML = ''
     for (var i = 0; i < allBoxes.length; i++) {
       allBoxes[i].innerHTML = ''
     }
