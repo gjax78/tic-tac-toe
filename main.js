@@ -54,7 +54,7 @@ function displayWinner(player) {
   }
 }
 
-function updatePlayer1Wins(player) {
+function updatePlayerWins(player) {
     tallyPlayerOne.innerText = `${game.player1.wins}`
     tallyPlayerTwo.innerText = `${game.player2.wins}`
 }
@@ -65,8 +65,8 @@ function endGame() {
     for (var i = 0; i < allBoxes.length; i++) {
       allBoxes[i].innerHTML = ''
     }
-    updatePlayer1Wins('player1')
-    updatePlayer1Wins('player2')
+    updatePlayerWins('player1')
+    updatePlayerWins('player2')
     game.clearArrays()
     gameBoard.addEventListener('click', whichSquare)
   }
