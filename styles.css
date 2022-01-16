@@ -18,15 +18,20 @@ body {
 .left-section {
   width: 33.33vw;
   background-image: linear-gradient(to left, #2e4057, #2e68ab);
+  font-family: Lora;
+  letter-spacing: 10px;
+  color: #6aa0de;
+  -webkit-text-stroke: .5px white;
 }
 
 .player-one-wins {
   padding-top: 10%;
-  font-family: Lora;
   font-size: 30px;
-  letter-spacing: 10px;
-  color: #6aa0de;
-  -webkit-text-stroke: .5px white;
+}
+
+.tally-player-one {
+  font-size: 60px;
+  font-weight: 700;
 }
 
 /* ########## MAIN SECTION ########## */
@@ -35,12 +40,12 @@ body {
   width: 33.33vw;
   background-image: radial-gradient(#6aa0de 15%, #2e4057 15%);
   background-size: 10px 10px;
+  font-family: Lora;
+  letter-spacing: 10px;
 }
 
 .main-section-title {
   padding-top: 6%;
-  font-family: Lora;
-  letter-spacing: 10px;
   stroke: #6aa0de;
   font-size: 60px;
   font-weight: 700;
@@ -62,8 +67,6 @@ body {
 
 .main-section-game-status {
   padding-bottom: 5%;
-  font-family: Lora;
-  letter-spacing: 10px;
   font-size: 25px;
   -webkit-text-stroke: .5px white;
   color: #6aa0de;
@@ -100,13 +103,18 @@ body {
   width: 33.33vw;
   background: #ffa5d8;
   background-image: linear-gradient(to right, #2e4057, #2e68ab);
+  font-family: Lora;
+  letter-spacing: 10px;
+  color: #6aa0de;
+  -webkit-text-stroke: .5px white;
 }
 
 .player-two-wins {
   padding-top: 10%;
-  font-family: Lora;
   font-size: 30px;
-  letter-spacing: 10px;
-  color: #6aa0de;
-  -webkit-text-stroke: .5px white;
+}
+
+.tally-player-two {
+  font-size: 60px;
+  font-weight: 600;
 }
