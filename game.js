@@ -2,7 +2,7 @@ class Game {
   constructor(id1, token1, id2, token2) {
     this.player1 = new Player(id1, token1);
     this.player2 = new Player(id2, token2);
-    this.gameBoardData = []; //(which boxes each player clicked combined)
+    this.gameBoardData = [];
     this.whoseTurn = 1;
     this.win = false;
     this.whoWon = [];
@@ -20,44 +20,61 @@ class Game {
   playerBoxesClicked(player, boxClicked) {
     player.boxesClicked.push(boxClicked)
     this.gameBoardData.push(boxClicked)
-    this.checkRows(player)
-    this.checkColumns(player)
-    this.checkDiagonals(player)
+    this.checkTotal(player)
+    this.changeTurns()
+  }
+
+  checkTotal(player) {
+    if (this.gameBoardData.length >= 5) {
+     this.checkGameWinner(player);
+   } else {
+     this.changeTurns();
+   }
   }
 
 checkRows(player) {
     if (player.boxesClicked.includes('box-1') && player.boxesClicked.includes('box-2') && player.boxesClicked.includes('box-3')) {
-      this.win = true
-      this.whoWon.push(player)
+      return true
     } else if (player.boxesClicked.includes('box-4') && player.boxesClicked.includes('box-5') && player.boxesClicked.includes('box-6')) {
-      this.win = true
-      this.whoWon.push(player)
+      return true
     } else if (player.boxesClicked.includes('box-7') && player.boxesClicked.includes('box-8') && player.boxesClicked.includes('box-9')) {
-      this.win = true
-      this.whoWon.push(player)
+      return true
     }
   }
 
   checkColumns(player) {
     if (player.boxesClicked.includes('box-1') && player.boxesClicked.includes('box-4') && player.boxesClicked.includes('box-7')) {
-      this.win = true
-      this.whoWon.push(player)
+      return true
     } else if (player.boxesClicked.includes('box-2') && player.boxesClicked.includes('box-5') && player.boxesClicked.includes('box-8')) {
-      this.win = true
-      this.whoWon.push(player)
+      return true
     } else if (player.boxesClicked.includes('box-3') && player.boxesClicked.includes('box-6') && player.boxesClicked.includes('box-9')) {
-      this.win = true
-      this.whoWon.push(player)
+      return true
     }
   }
 
   checkDiagonals(player) {
     if (player.boxesClicked.includes('box-1') && player.boxesClicked.includes('box-5') && player.boxesClicked.includes('box-9')) {
-      this.win = true
-      this.whoWon.push(player)
+      return true
     } else if (player.boxesClicked.includes('box-3') && player.boxesClicked.includes('box-5') && player.boxesClicked.includes('box-7')) {
-      this.win = true
-      this.whoWon.push(player)
+      return true
     }
+  }
+
+  checkGameWinner(player) {
+    if (this.checkRows(player) || this.checkColumns(player) || this.checkDiagonals(player)) {
+      this.executeWin(player);
+    } else if ((this.gameBoardData.length === 9) && (this.win === false)) {
+      this.tie = true;
+    } else {
+      this.changeTurns();
+    }
+  }
+
+  executeWin(player) {
+    this.win = true;
+    this.whoWon.push(player)
+    player.isWinner = true;
+    player.wins++;
+    this.changeTurns();
   }
 }
