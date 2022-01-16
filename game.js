@@ -26,9 +26,9 @@ class Game {
 
   checkPlayerData(player) {
     if (this.gameBoardData.length >= 5) {
-     this.checkGameWinner(player);
+     this.checkGameWinner(player)
    } else {
-     this.changeTurns();
+     this.changeTurns()
    }
   }
 
@@ -62,20 +62,20 @@ checkRows(player) {
 
   checkGameWinner(player) {
     if (this.checkRows(player) || this.checkColumns(player) || this.checkDiagonals(player)) {
-      this.updateWin(player);
+      this.updateWin(player)
     } else if ((this.gameBoardData.length === 9) && (this.win === false)) {
-      this.tie = true;
+      this.tie = true
     } else {
-      this.changeTurns();
+      this.changeTurns()
     }
   }
 
   updateWin(player) {
-    this.win = true;
+    this.win = true
     this.whoWon.push(player)
-    player.isWinner = true;
-    player.wins++;
-    this.changeTurns();
+    player.isWinner = true
+    player.wins++
+    this.changeTurns()
   }
 
   clearArrays() {
@@ -84,5 +84,6 @@ checkRows(player) {
    this.gameBoardData = []
    this.whoWon = []
    this.win = false
+   this.tie = false
  }
 }
