@@ -63,7 +63,7 @@ function endGame() {
     }
     updatePlayerWins('player1')
     updatePlayerWins('player2')
-    game.clearArrays()
+    game.updateGameDataAfterReset()
     gameBoard.addEventListener('click', whichSquare)
   }
 }

@@ -78,7 +78,7 @@ checkRows(player) {
     this.changeTurns()
   }
 
-  clearArrays() {
+  updateGameDataAfterReset() {
    this.player2.boxesClicked = []
    this.player1.boxesClicked = []
    this.gameBoardData = []
