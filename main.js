@@ -1,11 +1,7 @@
-//have a few global variables that will be updated
-//global var game = new instance of Game class
-//global game that you can continually update
 var game = new Game('one', '✕', 'two', '❍')
 
 /* ########## QUERYSELECTORS ########## */
 var gameBoard = document.querySelector('.game-board')
-// var box = document.querySelector('.box')
 var allBoxes = document.querySelectorAll('.box')
 var gameStatus = document.querySelector('.main-section-game-status')
 var tallyPlayerOne = document.querySelector('.tally-player-one')
@@ -29,7 +25,7 @@ function clickBox(boxes, box) {
     player2Turn(boxes, box)
     game.changeTurns()
   }
-  displayWinner()
+  displayGameStatus()
   setTimeout('endGame()', 5000)
 }
 
@@ -45,7 +41,7 @@ function player2Turn(boxes, box) {
   game.playerBoxesClicked(game.player2, box)
 }
 
-function displayWinner(player) {
+function displayGameStatus(player) {
   if (game.win) {
     gameStatus.innerHTML = `PLAYER ${game.whoWon[0].token} WINS!`
     gameBoard.removeEventListener('click', whichSquare)
