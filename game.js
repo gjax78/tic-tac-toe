@@ -30,9 +30,9 @@ class Game {
    } else {
      this.changeTurns()
    }
-  }
+ }
 
-checkRows(player) {
+  checkRows(player) {
     if (player.boxesClicked.includes('box-1') && player.boxesClicked.includes('box-2') && player.boxesClicked.includes('box-3')) {
       return true
     } else if (player.boxesClicked.includes('box-4') && player.boxesClicked.includes('box-5') && player.boxesClicked.includes('box-6')) {
@@ -84,5 +84,5 @@ checkRows(player) {
    this.whoWon = []
    this.win = false
    this.tie = false
- }
+  }
 }
