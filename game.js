@@ -73,7 +73,6 @@ checkRows(player) {
   updateWin(player) {
     this.win = true
     this.whoWon.push(player)
-    player.isWinner = true
     player.wins++
     this.changeTurns()
   }
