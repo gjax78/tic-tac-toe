@@ -61,8 +61,7 @@ function endGame() {
     for (var i = 0; i < allBoxes.length; i++) {
       allBoxes[i].innerHTML = ''
     }
-    updatePlayerWins('player1')
-    updatePlayerWins('player2')
+    updatePlayerWins()
     game.updateGameDataAfterReset()
     gameBoard.addEventListener('click', whichSquare)
   }
