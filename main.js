@@ -41,7 +41,7 @@ function player2Turn(boxes, box) {
   game.playerBoxesClicked(game.player2, box)
 }
 
-function displayGameStatus(player) {
+function displayGameStatus() {
   if (game.win) {
     gameStatus.innerHTML = `PLAYER ${game.whoWon[0].token} WINS!`
     gameBoard.removeEventListener('click', whichSquare)
@@ -50,7 +50,7 @@ function displayGameStatus(player) {
   }
 }
 
-function updatePlayerWins(player) {
+function updatePlayerWins() {
     tallyPlayerOne.innerText = `${game.player1.wins}`
     tallyPlayerTwo.innerText = `${game.player2.wins}`
 }
