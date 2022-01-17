@@ -30,9 +30,9 @@ class Game {
    } else {
      this.changeTurns()
    }
-  }
+ }
 
-checkRows(player) {
+  checkRows(player) {
     if (player.boxesClicked.includes('box-1') && player.boxesClicked.includes('box-2') && player.boxesClicked.includes('box-3')) {
       return true
     } else if (player.boxesClicked.includes('box-4') && player.boxesClicked.includes('box-5') && player.boxesClicked.includes('box-6')) {
@@ -73,17 +73,16 @@ checkRows(player) {
   updateWin(player) {
     this.win = true
     this.whoWon.push(player)
-    player.isWinner = true
     player.wins++
     this.changeTurns()
   }
 
-  clearArrays() {
+  updateGameDataAfterReset() {
    this.player2.boxesClicked = []
    this.player1.boxesClicked = []
    this.gameBoardData = []
    this.whoWon = []
    this.win = false
    this.tie = false
- }
+  }
 }

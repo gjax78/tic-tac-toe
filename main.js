@@ -1,11 +1,7 @@
-//have a few global variables that will be updated
-//global var game = new instance of Game class
-//global game that you can continually update
 var game = new Game('one', '✕', 'two', '❍')
 
 /* ########## QUERYSELECTORS ########## */
 var gameBoard = document.querySelector('.game-board')
-// var box = document.querySelector('.box')
 var allBoxes = document.querySelectorAll('.box')
 var gameStatus = document.querySelector('.main-section-game-status')
 var tallyPlayerOne = document.querySelector('.tally-player-one')
@@ -29,7 +25,7 @@ function clickBox(boxes, box) {
     player2Turn(boxes, box)
     game.changeTurns()
   }
-  displayWinner()
+  displayGameStatus()
   setTimeout('endGame()', 5000)
 }
 
@@ -45,7 +41,7 @@ function player2Turn(boxes, box) {
   game.playerBoxesClicked(game.player2, box)
 }
 
-function displayWinner(player) {
+function displayGameStatus() {
   if (game.win) {
     gameStatus.innerHTML = `PLAYER ${game.whoWon[0].token} WINS!`
     gameBoard.removeEventListener('click', whichSquare)
@@ -54,7 +50,7 @@ function displayWinner(player) {
   }
 }
 
-function updatePlayerWins(player) {
+function updatePlayerWins() {
     tallyPlayerOne.innerText = `${game.player1.wins}`
     tallyPlayerTwo.innerText = `${game.player2.wins}`
 }
@@ -65,9 +61,8 @@ function endGame() {
     for (var i = 0; i < allBoxes.length; i++) {
       allBoxes[i].innerHTML = ''
     }
-    updatePlayerWins('player1')
-    updatePlayerWins('player2')
-    game.clearArrays()
+    updatePlayerWins()
+    game.updateGameDataAfterReset()
     gameBoard.addEventListener('click', whichSquare)
   }
 }
