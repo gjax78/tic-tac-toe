@@ -11,8 +11,8 @@ var tallyPlayerTwo = document.querySelector('.tally-player-two')
 gameBoard.addEventListener('click', whichSquare)
 
 /* ########## FUNCTIONS ########## */
-function whichSquare(e) {
-  if (e.target.classList.contains('box') && e.target.innerHTML === '') {
+function whichSquare(event) {
+  if (event.target.classList.contains('box') && event.target.innerHTML === '') {
     clickBox(event.target, event.target.id)
   }
 }
