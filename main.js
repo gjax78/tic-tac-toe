@@ -51,8 +51,8 @@ function displayGameStatus() {
 }
 
 function updatePlayerWins() {
-    tallyPlayerOne.innerText = `${game.player1.wins}`
-    tallyPlayerTwo.innerText = `${game.player2.wins}`
+  tallyPlayerOne.innerText = `${game.player1.wins}`
+  tallyPlayerTwo.innerText = `${game.player2.wins}`
 }
 
 function endGame() {

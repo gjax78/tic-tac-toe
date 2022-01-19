@@ -27,10 +27,10 @@ class Game {
   checkPlayerData(player) {
     if (this.gameBoardData.length >= 5) {
      this.checkGameWinner(player)
-   } else {
+    } else {
      this.changeTurns()
-   }
- }
+    }
+  }
 
   checkRows(player) {
     if (player.boxesClicked.includes('box-1') && player.boxesClicked.includes('box-2') && player.boxesClicked.includes('box-3')) {
@@ -63,7 +63,7 @@ class Game {
   checkGameWinner(player) {
     if (this.checkRows(player) || this.checkColumns(player) || this.checkDiagonals(player)) {
       this.updateWin(player)
-    } else if ((this.gameBoardData.length === 9) && (this.win === false)) {
+    } else if ((this.gameBoardData.length === 9) && (!this.win)) {
       this.tie = true
     } else {
       this.changeTurns()
