@@ -58,9 +58,9 @@ function updatePlayerWins() {
 function endGame() {
   if (game.gameBoardData.length === 9 || game.win) {
     gameStatus.innerHTML = ''
-    for (var i = 0; i < allBoxes.length; i++) {
-      allBoxes[i].innerHTML = ''
-    }
+    allBoxes.forEach(box => {
+      box.innerHTML = ''
+    })
     updatePlayerWins()
     game.updateGameDataAfterReset()
     gameBoard.addEventListener('click', whichSquare)
