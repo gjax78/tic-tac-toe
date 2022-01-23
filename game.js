@@ -21,11 +21,7 @@ class Game {
   }
 
   checkPlayerData(player) {
-    if (this.gameBoardData.length >= 5) {
-     this.checkGameWinner(player)
-    } else {
-     this.changeTurns()
-    }
+    this.gameBoardData.length >= 5 ? this.checkGameWinner(player) : this.changeTurns()
   }
 
   checkRows(player) {
