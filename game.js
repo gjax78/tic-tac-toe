@@ -10,11 +10,7 @@ class Game {
   }
 
   changeTurns() {
-    if (this.whoseTurn === 1) {
-      this.whoseTurn = 2
-    } else {
-      this.whoseTurn = 1
-    }
+    this.whoseTurn === 1 ? this.whoseTurn = 2 : this.whoseTurn = 1
   }
 
   playerBoxesClicked(player, boxClicked) {
