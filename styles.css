@@ -26,11 +26,11 @@ body {
 
 .player-one-wins {
   padding-top: 10%;
-  font-size: 30px;
+  font-size: 2vw;
 }
 
 .tally-player-one {
-  font-size: 60px;
+  font-size: 5vw;
   font-weight: 700;
 }
 
@@ -39,7 +39,7 @@ body {
   background: #2e4057;
   width: 33.33vw;
   background-image: radial-gradient(#6aa0de 15%, #2e4057 15%);
-  background-size: 10px 10px;
+  background-size: .6vw .6vw;
   font-family: Lora;
   letter-spacing: 10px;
 }
@@ -47,7 +47,7 @@ body {
 .main-section-title {
   padding-top: 6%;
   stroke: #6aa0de;
-  font-size: 60px;
+  font-size: 3.5vw;
   font-weight: 700;
   stroke-width: 1.5;
   animation: textAnimate 5s infinite alternate;
@@ -68,7 +68,7 @@ body {
 
 .main-section-game-status {
   padding-bottom: 5%;
-  font-size: 25px;
+  font-size: 1.5vw;
   -webkit-text-stroke: .5px white;
   color: #6aa0de;
 }
@@ -84,8 +84,8 @@ body {
   justify-content: center;
   text-align: center;
   flex-direction: column;
-  height: 120px;
-  width: 120px;
+  height: 15vh;
+  width: 10vw;
   border: 1px solid #000000;
   border-color: #eff5fa;
   border-radius: 5px;
@@ -112,10 +112,10 @@ body {
 
 .player-two-wins {
   padding-top: 10%;
-  font-size: 30px;
+  font-size: 2vw;
 }
 
 .tally-player-two {
-  font-size: 60px;
+  font-size: 5vw;
   font-weight: 600;
 }
