@@ -17,7 +17,7 @@ function whichSquare(event) {
   }
 }
 
-function clickBox(boxes, box) {
+let clickBox = (boxes, box) => {
   if (game.whoseTurn === 1) {
     player1Turn(boxes, box)
     game.changeTurns()
@@ -29,19 +29,19 @@ function clickBox(boxes, box) {
   setTimeout('endGame()', 5000)
 }
 
-function player1Turn(boxes, box) {
+let player1Turn = (boxes, box) => {
   boxes.innerHTML = `${game.player1.token}`
   gameStatus.innerHTML = `PLAYER ${game.player2.token}'S TURN`
   game.playerBoxesClicked(game.player1, box)
 }
 
-function player2Turn(boxes, box) {
+let player2Turn = (boxes, box) => {
   boxes.innerHTML = `${game.player2.token}`
   gameStatus.innerHTML = `PLAYER ${game.player1.token}'S TURN`
   game.playerBoxesClicked(game.player2, box)
 }
 
-function displayGameStatus() {
+let displayGameStatus = () => {
   if (game.win) {
     gameStatus.innerHTML = `PLAYER ${game.whoWon[0].token} WINS!`
     gameBoard.removeEventListener('click', whichSquare)
@@ -50,17 +50,17 @@ function displayGameStatus() {
   }
 }
 
-function updatePlayerWins() {
+let updatePlayerWins = () => {
   tallyPlayerOne.innerText = `${game.player1.wins}`
   tallyPlayerTwo.innerText = `${game.player2.wins}`
 }
 
-function endGame() {
+let endGame = () => {
   if (game.gameBoardData.length === 9 || game.win) {
     gameStatus.innerHTML = ''
-    for (var i = 0; i < allBoxes.length; i++) {
-      allBoxes[i].innerHTML = ''
-    }
+    allBoxes.forEach(box => {
+      box.innerHTML = ''
+    })
     updatePlayerWins()
     game.updateGameDataAfterReset()
     gameBoard.addEventListener('click', whichSquare)

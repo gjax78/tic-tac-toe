@@ -10,11 +10,7 @@ class Game {
   }
 
   changeTurns() {
-    if (this.whoseTurn === 1) {
-      this.whoseTurn = 2
-    } else {
-      this.whoseTurn = 1
-    }
+    this.whoseTurn === 1 ? this.whoseTurn = 2 : this.whoseTurn = 1
   }
 
   playerBoxesClicked(player, boxClicked) {
@@ -25,11 +21,7 @@ class Game {
   }
 
   checkPlayerData(player) {
-    if (this.gameBoardData.length >= 5) {
-     this.checkGameWinner(player)
-    } else {
-     this.changeTurns()
-    }
+    this.gameBoardData.length >= 5 ? this.checkGameWinner(player) : this.changeTurns()
   }
 
   checkRows(player) {
