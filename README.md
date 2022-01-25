@@ -8,6 +8,7 @@ For my final solo project of Module 1 at Turing School of Software and Design, I
   - Iterate through/filter DOM elements using for loops
   - Use my problem solving process to break down large problems, solve things step by step, and trust myself to not rely on an outside “answer” to a logical challenge
 
+## [Deploy Link](https://gjax78.github.io/tic-tac-toe/)
 
 ## Contributors
 ​Geena Jackson - [GitHub](https://github.com/gjax78)​<br>
